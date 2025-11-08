@@ -18,274 +18,6 @@
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-      /* Service Feature Cards */
-      .service-feature {
-        background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-        padding: 2.5rem;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        margin-bottom: 30px;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: 1px solid rgba(0,0,0,0.05);
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .service-feature:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-      }
-      
-      .service-feature:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
-        pointer-events: none;
-      }
-
-      /* Service Icons */
-      .service-icon {
-        font-size: 3rem;
-        background: linear-gradient(45deg, #007bff, #00c6ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 1.5rem;
-        position: relative;
-        display: inline-block;
-      }
-      
-      .service-icon:after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background: rgba(0,123,255,0.1);
-        border-radius: 50%;
-        z-index: -1;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      /* Price Cards */
-      .block-7 {
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        transition: all 0.4s ease;
-        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-        border: 1px solid rgba(0,0,0,0.05);
-        position: relative;
-      }
-      
-      .block-7:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 20px 45px rgba(0,0,0,0.15);
-      }
-      
-      .block-7.is-featured {
-        background: linear-gradient(180deg, #ffffff 0%, #e8f3ff 100%);
-        border: 2px solid #007bff;
-      }
-
-      /* Badge Styling */
-      .badge-tier {
-        position: absolute;
-        top: -15px;
-        right: 20px;
-        background: linear-gradient(45deg, #28a745, #20c997);
-        color: white;
-        padding: 8px 20px;
-        border-radius: 25px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
-        z-index: 1;
-      }
-
-      /* Pricing Elements */
-      .price {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #007bff;
-        margin: 1.5rem 0;
-        display: block;
-      }
-      
-      .price sup {
-        font-size: 1.5rem;
-        top: -0.75em;
-      }
-      
-      .price .number {
-        font-size: 3.5rem;
-        font-weight: 800;
-      }
-      
-      .price sub {
-        font-size: 1rem;
-        bottom: 0;
-        color: #6c757d;
-      }
-
-      /* Feature Lists */
-      .pricing-text {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 1.5rem;
-      }
-      
-      .pricing-text li {
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        color: #495057;
-        font-size: 0.95rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .pricing-text li i {
-        margin-right: 8px;
-        color: #28a745;
-        font-size: 1.1rem;
-      }
-
-      /* Package Features */
-      .package-features {
-        margin-top: 20px;
-        padding: 15px;
-        background: rgba(0,123,255,0.05);
-        border-radius: 10px;
-        font-size: 0.9rem;
-      }
-      
-      .feature-included {
-        color: #28a745;
-        font-weight: 600;
-      }
-      
-      .feature-excluded {
-        color: #dc3545;
-        text-decoration: line-through;
-        opacity: 0.7;
-      }
-
-      /* Call to Action Buttons */
-      .btn-primary {
-        border-radius: 30px;
-        padding: 12px 30px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        background: linear-gradient(45deg, #007bff, #00c6ff);
-        border: none;
-        box-shadow: 0 5px 15px rgba(0,123,255,0.2);
-      }
-      
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0,123,255,0.3);
-        background: linear-gradient(45deg, #0056b3, #007bff);
-      }
-
-      /* Section Headers */
-      .heading-section {
-        margin-bottom: 4rem;
-      }
-      
-      .subheading {
-        font-size: 1.1rem;
-        display: block;
-        margin-bottom: 5px;
-        color: #007bff;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
-      
-      .heading-section h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        position: relative;
-        padding-bottom: 15px;
-      }
-      
-      .heading-section h2:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50px;
-        height: 3px;
-        background: linear-gradient(45deg, #007bff, #00c6ff);
-      }
-
-      /* Service Details */
-      .service-details {
-        font-size: 0.95rem;
-        color: #6c757d;
-        line-height: 1.8;
-      }
-      
-      .service-details li {
-        margin-bottom: 10px;
-        padding-left: 25px;
-        position: relative;
-      }
-      
-      .service-details li i {
-        position: absolute;
-        left: 0;
-        top: 4px;
-      }
-
-      /* Responsive Adjustments */
-      @media (max-width: 768px) {
-        .service-feature {
-          padding: 2rem;
-        }
-        
-        .price .number {
-          font-size: 3rem;
-        }
-        
-        .heading-section h2 {
-          font-size: 2rem;
-        }
-      }
-
-      /* Animation Effects */
-      .ftco-animate {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .ftco-animated {
-        opacity: 1;
-        visibility: visible;
-        animation: fadeInUp 0.8s ease-out forwards;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
   </head>
   <body>
 
@@ -348,74 +80,24 @@
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-10">
-						<div class="heading-section text-center ftco-animate pb-4">
-							<span class="subheading">What we offer</span>
-							<h2>Complete Publishing Solutions</h2>
-						</div>
-						<p class="lead text-center mb-5">Transform your manuscript into a professionally published book with our comprehensive suite of services. We combine industry expertise with personalized attention to help authors at every stage of their publishing journey.</p>
-					</div>
-				</div>
-
-				<!-- Core Services Features -->
-				<div class="row">
-					<div class="col-md-4 ftco-animate">
-						<div class="service-feature text-center">
-							<div class="service-icon">
-								<i class="fa fa-edit"></i>
-							</div>
-							<h3>Editorial Excellence</h3>
-							<p>Professional editing services to polish your manuscript:</p>
-							<ul class="list-unstyled service-details">
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Developmental Editing</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Copy Editing</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Proofreading</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Content Review</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-4 ftco-animate">
-						<div class="service-feature text-center">
-							<div class="service-icon">
-								<i class="fa fa-paint-brush"></i>
-							</div>
-							<h3>Design & Layout</h3>
-							<p>Eye-catching design solutions for your book:</p>
-							<ul class="list-unstyled service-details">
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Cover Design</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Interior Layout</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Custom Typography</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Image Enhancement</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-4 ftco-animate">
-						<div class="service-feature text-center">
-							<div class="service-icon">
-								<i class="fa fa-globe"></i>
-							</div>
-							<h3>Distribution & Marketing</h3>
-							<p>Get your book to readers worldwide:</p>
-							<ul class="list-unstyled service-details">
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Global Distribution</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Marketing Strategy</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Online Presence</li>
-								<li><i class="fa fa-check-circle text-success mr-2"></i>Sales Optimization</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+	        	<div class="heading-section text-center ftco-animate pb-4">
+	        		<span class="subheading">What we offer</span>
+	          	<h2>Publishing Services</h2>
+	        	</div>
+	        	<p>From manuscript to market, we provide a complete suite of services to help authors publish with confidence. Choose a package that fits your needs or mix-and-match services including developmental editing, copy editing, cover design, interior layout, ISBN and metadata setup, distribution, and launch support.</p>
+	      	</div>
+	      	</div>
 			</div>
 		</section>
 
 		<section class="ftco-section bg-light">
 	    	<div class="container">
 	    		<div class="row justify-content-center pb-5 mb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<span class="subheading">Services &amp; Pricing</span>
-					<h2>Publishing Packages</h2>
-					<p class="lead">Choose from our carefully crafted packages or customize a solution that fits your needs</p>
-				</div>
-			</div>
+	         <div class="col-md-7 heading-section text-center ftco-animate">
+	          	<span class="subheading">Services &amp; Pricing</span>
+	            <h2>Packages up to $2,000</h2>
+	          </div>
+	        </div>
 	    		<div class="row">
 	    			<div class="col-md-6 col-lg-3 ftco-animate d-flex">
 		          <div class="block-7 w-100">
@@ -463,8 +145,8 @@
 		          <div class="block-7 w-100 is-featured">
 		            <div class="text-center">
 			            <span class="badge-tier">Most Popular</span>
-			            <span class="price"><sup>$</sup> <span class="number">750</span> <sub>/project</sub></span>
-			            <span class="excerpt d-block">Premium</span>
+			            <span class="price"><sup>$</sup> <span class="number">700</span> <sub>/project</sub></span>
+			            <span class="excerpt d-block">Professional</span>
 			            <ul class="pricing-text mb-5">
 			              <li><span class="fa fa-check mr-2"></span>Line + copy editing</li>
 			              <li><span class="fa fa-check mr-2"></span>Custom cover design</li>
@@ -531,61 +213,6 @@
 		          </div>
 		        </div>
 		      </div>
-
-			<!-- Additional Services Section -->
-			<div class="row mt-5 justify-content-center">
-				<div class="col-md-10">
-					<div class="heading-section text-center ftco-animate">
-						<span class="subheading">Customization</span>
-						<h2>Additional Services</h2>
-					</div>
-				</div>
-			</div>
-
-			<div class="row mt-4">
-				<div class="col-md-4 ftco-animate">
-					<div class="service-feature text-center">
-						<div class="service-icon">
-							<i class="fa fa-book"></i>
-						</div>
-						<h3>Print Services</h3>
-						<ul class="list-unstyled service-details">
-							<li>Hardcover Production</li>
-							<li>Paperback Options</li>
-							<li>Print-On-Demand</li>
-							<li>Bulk Printing</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4 ftco-animate">
-					<div class="service-feature text-center">
-						<div class="service-icon">
-							<i class="fa fa-megaphone"></i>
-						</div>
-						<h3>Marketing Add-ons</h3>
-						<ul class="list-unstyled service-details">
-							<li>Social Media Campaign</li>
-							<li>Press Release Writing</li>
-							<li>Author Website</li>
-							<li>Book Launch Event</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4 ftco-animate">
-					<div class="service-feature text-center">
-						<div class="service-icon">
-							<i class="fa fa-plus-circle"></i>
-						</div>
-						<h3>Specialty Services</h3>
-						<ul class="list-unstyled service-details">
-							<li>Audiobook Production</li>
-							<li>Translation Services</li>
-							<li>Illustration Design</li>
-							<li>Author Coaching</li>
-						</ul>
-					</div>
-				</div>
-			</div>
 	    	</div>
 	    </section>
 
@@ -598,7 +225,17 @@
               <p>Stay connected with us for updates, author insights, publishing tips, and new book releases.</p>
             </div>
           </div>
-          
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Extra Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Affiliate Program</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Business Services</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Education Services</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Gift Cards</a></li>
+              </ul>
+            </div>
+          </div>
           <div class="col-sm-12 col-md">
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Legal</h2>
