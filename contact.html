@@ -18,9 +18,29 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
     
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+		<link rel="stylesheet" href="css/flaticon.css">
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			/* Ensure the map container is visible and responsive */
+			#map, .map {
+				width: 100%;
+				min-height: 360px;
+				height: 100%;
+				border-radius: 8px;
+				overflow: hidden;
+			}
+
+			/* If the column containing the map needs full height */
+			.contact-wrap, .contact-wrap .form-control {
+				box-sizing: border-box;
+			}
+
+			/* Small tweak for mobile */
+			@media (max-width: 767px) {
+				#map, .map { min-height: 300px; }
+			}
+		</style>
+	</head>
   <body>
 
   	<div class="container-fluid px-md-5  pt-4 pt-md-5">
@@ -164,8 +184,17 @@
 										</form>
 									</div>
 								</div>
-								<div class="col-md-5 order-md-first d-flex align-items-stretch">
-									<div id="map" class="map"></div>
+								<div class="col-md-5 order-md-first d-flex align-items-stretch" style="position:relative;">
+									<!-- Embedded Google Map (iframe) as a fallback that requires no API key -->
+									<div class="map-embed w-100" style="border-radius:8px; overflow:hidden;">
+										<iframe 
+											width="100%" height="360" frameborder="0" style="border:0"
+											src="https://www.google.com/maps?q=939+Brady+Ave+Bronx+NY+10462&output=embed" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+									</div>
+									<div class="mt-2 text-center w-100">
+										<a class="btn btn-outline-primary btn-sm mr-2" target="_blank" href="https://www.google.com/maps/search/?api=1&query=939+Brady+Ave+Bronx+NY+10462">Open in Google Maps</a>
+										<a class="btn btn-outline-secondary btn-sm" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=939+Brady+Ave+Bronx+NY+10462">Get directions</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -188,9 +217,9 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Legal</h2>
               <ul class="list-unstyled">
-                <li><a href="privacy-policy.html"><span class="fa fa-chevron-right mr-2"></span>Privacy &amp; Policy</a></li>
+               <li><a href="privacy-policy.html"><span class="fa fa-chevron-right mr-2"></span>Privacy Policy</a></li>
+				<li><a href="refund-policy.html"><span class="fa fa-chevron-right mr-2"></span>Refund Policy</a></li>
                 <li><a href="terms-conditions.html"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
-				<li><a href="refund-policy.html"><span class="fa fa-chevron-right mr-2"></span>Refund &amp; Policy</a></li>
               </ul>
             </div>
           </div>
@@ -250,8 +279,11 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
+		  <!-- Google Maps JS: loads asynchronously and calls init as callback -->
+		  <!-- NOTE: Replace YOUR_API_KEY with a valid Google Maps JavaScript API key.
+			  See KEY_INSTRUCTIONS.md in the project root for steps to create a key. -->
+		  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=init"></script>
+	<script src="js/google-map.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
   <script src="js/main.js"></script>
     
